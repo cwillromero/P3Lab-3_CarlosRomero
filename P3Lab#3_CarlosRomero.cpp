@@ -13,6 +13,7 @@ int main(){
 	switch(opcion){
 		case '1': {
 			cout<<endl<<"-----Ejericio 1------"<<endl;
+			ejercicio1();
 		break;
 		        }
 		case '2': {
@@ -22,6 +23,7 @@ int main(){
 		        }
 		case '3': {
 			cout<<endl<<"-----Ejericio 2------"<<endl;
+			ejercicio3();
 		break;
 			}
 		case '4':
@@ -65,7 +67,7 @@ void ejercicio2(){
 		cin>>numero;
 		cout<<endl;
 	}
-	cout<<numero<<endl;
+	cout<<"Permutaciones: "<<endl;
 	string* numeros=NULL;
 	string* permutaciones=NULL;
 	numeros=new string[4];
@@ -89,13 +91,35 @@ string mezclar(string* arreglo){
 	string*numero=NULL;
 	numero=new string[4];
 	string repetido="";
-	for(int i=0; i<4; i++){
-		posicion=rand()%4+0;
-		if(repetido.find(arreglo[posicion] )==string::npos){
+	int cont1=0;
+	int cont2=0;
+	int cont3=0;
+	int cont4=0;	
+	for(int i=0; i<4;i++){
+		if(arreglo[i]==arreglo[0])
+			cont1++;
+		if(arreglo[i]==arreglo[1])
+			cont2++;
+		if(arreglo[i]==arreglo[2])
+			cont3++;
+		if(arreglo[i]==arreglo[3])
+			cont4++;
+	}
+	if(cont1==1 && cont2==1 && cont2==1 && cont4==1){
+		for(int i=0; i<4; i++){
+			posicion=rand()%4+0;
+			if(repetido.find(arreglo[posicion] )==string::npos){
+				numero[i]=arreglo[posicion];
+				repetido=repetido+numero[i];
+			}else{
+				i=i-1;
+			}
+		}
+	}
+	else{
+		for(int i=0; i<4; i++){
+			posicion=rand()%4+0;
 			numero[i]=arreglo[posicion];
-			repetido=repetido+numero[i];
-		}else{
-			i=i-1;
 		}
 	}
 	string mezcla;
@@ -103,3 +127,7 @@ string mezclar(string* arreglo){
 	return mezcla;
 }
 
+
+void ejercicio3(){
+
+}
