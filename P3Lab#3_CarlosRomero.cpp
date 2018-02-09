@@ -160,7 +160,7 @@ void ejercicio3(){
 			Anio=atoi(anio.c_str());
 			Mes=atoi(mes.c_str());
 			Dia=atoi(dia.c_str());
-			if(Anio==2018 && Dia>9 && Mes>2){
+			if(Anio==2018 && (Dia>9 ||  Mes>2)){
 				cout<<"Fecha errónea"<<endl;
 			}else if(Anio>2018 || Dia>31 || Mes>12){
 				cout<<"Fecha errónea"<<endl;
