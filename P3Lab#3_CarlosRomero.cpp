@@ -69,7 +69,7 @@ void ejercicio1(){
 	for(int i=0; i<size; i++){
 		numeros[i]=rand()%9+1;
 	}
-	double matrices;
+	int contador=size;
 }
 
 void ejercicio2(){
