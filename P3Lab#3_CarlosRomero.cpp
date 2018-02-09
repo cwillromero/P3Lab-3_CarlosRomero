@@ -141,6 +141,7 @@ void ejercicio3(){
 	int Anio;
 	int Mes;
 	int Dia;
+	string bisiesto=".";
 	string anio;
 	string mes;
 	string dia;
@@ -189,6 +190,9 @@ void ejercicio3(){
 					mes="Noviembre";
 				if(Mes==12)
 					mes="Diciembre";
+				if(Anio%4==0 && Anio%100==0 && Anio%400==0){
+					bisiesto=" Es Año Bisiesto. ";
+				}
 
 				break;
 			}
@@ -196,6 +200,6 @@ void ejercicio3(){
 
 	}
 
-	cout<<", "<<Dia<<" de "<<mes<<" de "<<Anio<<endl;
+	cout<<", "<<Dia<<" de "<<mes<<" de "<<Anio<<bisiesto<<endl;
 
 }
