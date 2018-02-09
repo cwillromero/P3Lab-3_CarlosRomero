@@ -141,6 +141,7 @@ void ejercicio3(){
 	int Anio;
 	int Mes;
 	int Dia;
+	string DiaSemana1;
 	string bisiesto=".";
 	string anio;
 	string mes;
@@ -159,7 +160,7 @@ void ejercicio3(){
 			Anio=atoi(anio.c_str());
 			Mes=atoi(mes.c_str());
 			Dia=atoi(dia.c_str());
-			if(Anio>2018 && Dia>9 && Mes>2){
+			if(Anio==2018 && Dia>9 && Mes>2){
 				cout<<"Fecha errónea"<<endl;
 			}else if(Anio>2018 || Dia>31 || Mes>12){
 				cout<<"Fecha errónea"<<endl;
@@ -193,13 +194,27 @@ void ejercicio3(){
 				if(Anio%4==0 && Anio%100==0 && Anio%400==0){
 					bisiesto=" Es Año Bisiesto. ";
 				}
-
+				double diaSemana=((Anio-1)%7+((Anio-1)/4-3*((Anio-1)/100+1)/4)%7+Mes+Dia%7)%7;
+				if(diaSemana==1)
+					DiaSemana1="Domingo";
+				if(diaSemana==2)
+					DiaSemana1="Lunes";
+				if(diaSemana==3)
+					DiaSemana1="Martes";	
+				if(diaSemana==4)
+					DiaSemana1="Miercoles";
+				if(diaSemana==5)
+					DiaSemana1="Jueves";
+				if(diaSemana==6)
+					DiaSemana1="Viernes";
+				if(diaSemana==7)
+					DiaSemana1="Sábado";
 				break;
 			}
 		}
 
 	}
 
-	cout<<", "<<Dia<<" de "<<mes<<" de "<<Anio<<bisiesto<<endl;
+	cout<<DiaSemana1<<", "<<Dia<<" de "<<mes<<" de "<<Anio<<bisiesto<<endl;
 
 }
