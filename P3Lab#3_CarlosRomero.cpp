@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include <string>
 using namespace std;
 
@@ -16,6 +17,7 @@ int main(){
 			case '1': {
 				cout<<endl<<"-----Ejericio 1------"<<endl;
 				ejercicio1();
+				cout<<endl;
 			break;
 			        }
 			case '2': {
@@ -27,6 +29,7 @@ int main(){
 			case '3': {
 				cout<<endl<<"-----Ejericio 2------"<<endl;
 				ejercicio3();
+				cout<<endl;
 			break;
 				}
 			case '4':{
@@ -135,5 +138,64 @@ string mezclar(string* arreglo){
 
 
 void ejercicio3(){
+	int Anio;
+	int Mes;
+	int Dia;
+	string anio;
+	string mes;
+	string dia;
+	while(true){
+		string fecha;
+		cout<<"Ingrese una fecha en formato [AAAAMMDD]: ";
+		cin>>fecha;
+		cout<<endl;
+		if(fecha.size()!=8){
+			cout<<"Fecha errónea"<<endl;
+		}else{
+			anio=fecha.substr(0,4);
+			mes=fecha.substr(4,2);
+			dia=fecha.substr(6,8);
+			Anio=atoi(anio.c_str());
+			Mes=atoi(mes.c_str());
+			Dia=atoi(dia.c_str());
+			if(Anio>2018 && Dia>9 && Mes>2){
+				cout<<"Fecha errónea"<<endl;
+			}else if(Anio>2018 || Dia>31 || Mes>12){
+				cout<<"Fecha errónea"<<endl;
+			}else if(Mes==2 && Dia>28){
+				cout<<"Fecha errónea"<<endl;
+			}else{
+				if(Mes==1)
+					mes="Enero";
+				if(Mes==2)
+					mes="Febrero";
+				if(Mes==3)
+					mes="Marzo"; 
+				if(Mes==4)
+					mes="Abril";	
+				if(Mes==5)
+					mes="Mayo";
+				if(Mes==6)
+					mes="Junio";
+				if(Mes==7)
+					mes="Julio";
+				if(Mes==8)
+					mes="Agosto";
+				if(Mes==9)
+					mes="Septiembre";
+				if(Mes==10)
+					mes="Octubre";
+				if(Mes==11)
+					mes="Noviembre";
+				if(Mes==12)
+					mes="Diciembre";
+
+				break;
+			}
+		}
+
+	}
+
+	cout<<", "<<Dia<<" de "<<mes<<" de "<<Anio<<endl;
 
 }
