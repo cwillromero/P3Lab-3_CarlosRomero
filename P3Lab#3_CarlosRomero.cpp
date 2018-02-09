@@ -70,6 +70,7 @@ void ejercicio1(){
 		numeros[i]=rand()%9+1;
 	}
 	int contador=size;
+	cout<<"En construcción."<<endl;
 }
 
 void ejercicio2(){
