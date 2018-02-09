@@ -64,6 +64,12 @@ void ejercicio1(){
 	cout<<"Ingrese el tamaño del arreglo: ";
 	int size=0;
 	cin>>size;
+	int* numeros =NULL;
+	numeros=new int [size];
+	for(int i=0; i<size; i++){
+		numeros[i]=rand()%9+1;
+	}
+	double matrices;
 }
 
 void ejercicio2(){
@@ -194,20 +200,20 @@ void ejercicio3(){
 				if(Anio%4==0 && Anio%100==0 && Anio%400==0){
 					bisiesto=" Es Año Bisiesto. ";
 				}
-				double diaSemana=((Anio-1)%7+((Anio-1)/4-3*((Anio-1)/100+1)/4)%7+Mes+Dia%7)%7;
-				if(diaSemana==1)
-					DiaSemana1="Domingo";
-				if(diaSemana==2)
-					DiaSemana1="Lunes";
-				if(diaSemana==3)
-					DiaSemana1="Martes";	
-				if(diaSemana==4)
-					DiaSemana1="Miercoles";
-				if(diaSemana==5)
-					DiaSemana1="Jueves";
+				double diaSemana=((Anio-1)%7+((Anio-1)/4-3*((Anio-1)/100+1)/4)%7+Mes+(Dia%7))%7;
 				if(diaSemana==6)
+					DiaSemana1="Domingo";
+				if(diaSemana==0)
+					DiaSemana1="Lunes";
+				if(diaSemana==1)
+					DiaSemana1="Martes";	
+				if(diaSemana==2)
+					DiaSemana1="Miercoles";
+				if(diaSemana==3)
+					DiaSemana1="Jueves";
+				if(diaSemana==4)
 					DiaSemana1="Viernes";
-				if(diaSemana==7)
+				if(diaSemana==5)
 					DiaSemana1="Sábado";
 				break;
 			}
