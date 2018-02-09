@@ -9,25 +9,31 @@ void ejercicio3();
 string mezclar(string*);
 
 int main(){
-	char opcion=menu();
-	switch(opcion){
-		case '1': {
-			cout<<endl<<"-----Ejericio 1------"<<endl;
-			ejercicio1();
-		break;
-		        }
-		case '2': {
-			cout<<endl<<"-----Ejericio 2------"<<endl;
-			ejercicio2();
-		break;
-		        }
-		case '3': {
-			cout<<endl<<"-----Ejericio 2------"<<endl;
-			ejercicio3();
-		break;
-			}
-		case '4':
-		break;
+	char opcion='a';
+	while(opcion!='4'){
+		opcion=menu();
+		switch(opcion){
+			case '1': {
+				cout<<endl<<"-----Ejericio 1------"<<endl;
+				ejercicio1();
+			break;
+			        }
+			case '2': {
+				cout<<endl<<"-----Ejericio 2------"<<endl;
+				ejercicio2();
+				cout<<endl;
+			break;
+			        }
+			case '3': {
+				cout<<endl<<"-----Ejericio 2------"<<endl;
+				ejercicio3();
+			break;
+				}
+			case '4':{
+
+			break;
+				 }
+		}
 	}
 	return 0;
 }
